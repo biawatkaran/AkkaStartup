@@ -1,9 +1,12 @@
 package com.excelian
 
+import java.io.File
+
+
 /**
   * Created by KBiawat on 09/02/2015.
  */
-object WordCountExecutorextends extends App{
+object WordCountExecutor extends App{
 
   import akka.actor.{ActorSystem, Props}
   import akka.pattern.ask
@@ -11,13 +14,14 @@ object WordCountExecutorextends extends App{
   import scala.concurrent.duration._
   import akka.dispatch.ExecutionContexts._
   import com.excelian.wc.util.{FileReaderActor, ProcessFileMsg}
-
-  implicit val ec = global
+  import java.util.concurrent.TimeUnit
 
   override def main (args: Array[String]) {
-    val system = ActorSystem("System")
-    val actor = system.actorOf(Props(new FileReaderActor(args(0))))
-    implicit val timeout = Timeout(25)
+    implicit val ec = global
+    implicit val timeout = Timeout(25, TimeUnit.SECONDS)
+
+    val system = ActorSystem("FileReaderSystem")
+    val actor = system.actorOf(Props(new FileReaderActor("full-path-to\\test.txt")))
 
     val future = actor ? ProcessFileMsg()
 

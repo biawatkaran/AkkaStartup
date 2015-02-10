@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.excelian</groupId>
-	<artifactId>akka-examples</artifactId>
-	<packaging>pom</packaging>
-	<version>1.0</version>
+    <groupId>com.excelian</groupId>
+    <artifactId>akka-examples</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
     <modules>
         <module>word-count</module>
     </modules>
     <name>akka-parent</name>
 
-	<developers>
-		<developer>
-			<name>Karan Biawat</name>
-			<email>karandeep.biawat@excelian.com</email>
-			<organization>Excelian</organization>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <name>Karan Biawat</name>
+            <email>karandeep.biawat@excelian.com</email>
+            <organization>Excelian</organization>
+        </developer>
+    </developers>
 
     <properties>
-        <project.source.version>1.7</project.source.version>
-        <project.target.version>1.7</project.target.version>
+        <project.source.version>1.8</project.source.version>
+        <project.target.version>1.8</project.target.version>
         <project.encoding>UTF-8</project.encoding>
     </properties>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
-				<configuration>
-					<encoding>${project.encoding}</encoding>
-					<source>${project.source.version}</source>
-					<target>${project.target.version}</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
-				<configuration>
-					<encoding>${project.encoding}</encoding>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <encoding>${project.encoding}</encoding>
+                    <source>${project.source.version}</source>
+                    <target>${project.target.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <encoding>${project.encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <repository>

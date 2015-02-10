@@ -18,7 +18,7 @@ class FileReaderActor(fileName : String) extends  Actor{
 
   def receive = {
 
-    case ProcessFileMsg => {
+    case ProcessFileMsg() => {
       if(running){
         println("Warning : duplicate start message")
       } else {
