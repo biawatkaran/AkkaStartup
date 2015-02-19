@@ -21,8 +21,9 @@ object WordCountExecutor extends App{
     implicit val timeout = Timeout(25, TimeUnit.SECONDS)
 
     val system = ActorSystem("FileReaderSystem")
-    val actor = system.actorOf(Props(new FileReaderActor("full-path-to\\test.txt")))
+    val filePath = getClass.getResource("/test.txt").getFile
 
+    val actor = system.actorOf(Props(new FileReaderActor(filePath)))
     val future = actor ? ProcessFileMsg()
 
     future.map { result =>
